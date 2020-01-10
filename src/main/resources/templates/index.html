@@ -19,9 +19,9 @@
 			<!--错误信息的显示,使用th:if进行判断-->
 			<p th:text="${message}" style="color: red" th:if="${!#strings.isEmpty(message)}"></p>
 			<label class="sr-only">Username</label>
-			<input type="text" class="form-control" placeholder="Username" name="userName" th:placeholder="#{index.username}" required="" autofocus="">
+			<input type="text" class="form-control" placeholder="Username" name="userName" th:placeholder="#{index.username}" required="" autofocus="" value="管理员">
 			<label class="sr-only" th:text="#{index.password}">Password</label>
-			<input type="password" class="form-control" placeholder="Password" name="passWord" th:placeholder="#{index.password}" required="">
+			<input type="password" class="form-control" placeholder="Password" name="passWord" th:placeholder="#{index.password}" required="" value="123456">
 			<div class="checkbox mb-3">
 				<label>
           <input type="checkbox" value="remember-me"> [[#{index.remember}]]

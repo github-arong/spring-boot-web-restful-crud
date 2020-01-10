@@ -21,11 +21,11 @@ public class EmployeeDao {
 	static{
 		employees = new HashMap<Integer, Employee>();
 
-		employees.put(1001, new Employee(1001, "E-AA", "aa@163.com", 1, new Department(101, "D-AA")));
-		employees.put(1002, new Employee(1002, "E-BB", "bb@163.com", 1, new Department(102, "D-BB")));
-		employees.put(1003, new Employee(1003, "E-CC", "cc@163.com", 0, new Department(103, "D-CC")));
-		employees.put(1004, new Employee(1004, "E-DD", "dd@163.com", 0, new Department(104, "D-DD")));
-		employees.put(1005, new Employee(1005, "E-EE", "ee@163.com", 1, new Department(105, "D-EE")));
+		employees.put(1001, new Employee(1001, "张强", "12189794@qq.com", 1, new Department(101, "运维部")));
+		employees.put(1002, new Employee(1002, "李闯", "lichuang@163.com", 1, new Department(102, "后端开发部")));
+		employees.put(1003, new Employee(1003, "李密密", "mimi@163.com", 0, new Department(102, "后端开发部")));
+		employees.put(1004, new Employee(1004, "王旭", "234598984@qq.com", 1, new Department(103, "产品部")));
+		employees.put(1005, new Employee(1005, "阿卡丽", "987572346@163.com", 0, new Department(104, "后勤部")));
 	}
 	
 	private static Integer initId = 1006;

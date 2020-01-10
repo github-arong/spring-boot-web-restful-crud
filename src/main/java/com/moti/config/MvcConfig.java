@@ -9,9 +9,17 @@ import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
 import org.springframework.web.servlet.config.annotation.ViewControllerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
 
-//使用WebMvcConfigurerAdapter可以来扩展SpringMVC的功能
+/**
+ * 使用WebMvcConfigurerAdapter可以来扩展SpringMVC的功能
+ */
 @Configuration
 public class MvcConfig extends WebMvcConfigurerAdapter {
+
+    /**
+     * 配置视图控制器:
+     * 在项目开发过程中，经常会涉及页面跳转问题，而且这个页面跳转没有任何业务逻辑过程，只是单纯的路由过程 ( 点击一个按钮跳转到一个页面 ) 。
+     * @param registry
+     */
     @Override
     public void addViewControllers(ViewControllerRegistry registry) {
         //浏览器发送 /main.html 请求来到 dashboard

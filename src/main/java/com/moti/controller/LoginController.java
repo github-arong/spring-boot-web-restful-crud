@@ -2,10 +2,7 @@ package com.moti.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.util.StringUtils;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpSession;
 import java.util.Map;
@@ -15,10 +12,9 @@ public class LoginController {
 
 
     /**
-     * @RequestMapping(value = "/user/login",method = RequestMethod.POST)
-     * 可以替换成
-     * @PostMapping(value = "/user/login")
+     * 用户登录,用户名随意,密码为123456
      *
+     * @RequestMapping(value = "/user/login",method = RequestMethod.POST)  -> @PostMapping(value = "/user/login")
      * 使用@RequestParam注解表明参数时，如果参数为空，那么会报错
      */
     @PostMapping(value = "/user/login")
@@ -33,5 +29,16 @@ public class LoginController {
             map.put("message","密码错误");
             return "index";
         }
+    }
+
+    /**
+     * 退出登录
+     * @param session 清空session
+     * @return 转发到登录主页
+     */
+    @GetMapping("/user/logout")
+    public String logout(HttpSession session){
+        session.invalidate();
+        return "redirect:/";
     }
 }
