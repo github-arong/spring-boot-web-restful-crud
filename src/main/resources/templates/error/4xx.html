@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>发生了一个错误</title>
+</head>
+<body>
+    <div style="font-weight: 700;font-size: 30px;width: 100%;text-align:center;margin-top: 10px;color: red" th:text="'状态码：'+${status}"></div>
+    <hr>
+    <div style="font-weight: 700;font-size: 18px;width: 100%;" th:text="发生了一个错误"></div>
+    <div style="font-weight: 700;font-size: 18px;width: 100%;" th:text="'时间：:'+${timestamp}"></div>
+    <div style="font-weight: 700;font-size: 18px;width: 100%;" th:text="'错误：'+${error}"></div>
+    <div style="font-weight: 700;font-size: 18px;width: 100%;" th:text="'异常对象：'+${exception}"></div>
+    <div style="font-weight: 700;font-size: 18px;width: 100%;" th:text="'异常消息：'+${message}"></div>
+    <div style="font-weight: 700;font-size: 18px;width: 100%;" th:text="'JSR303数据校验的错误：'+${errors}"></div>
+</body>
+</html>
