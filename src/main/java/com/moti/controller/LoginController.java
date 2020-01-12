@@ -1,5 +1,6 @@
 package com.moti.controller;
 
+import com.moti.exception.UserNotExistException;
 import org.springframework.stereotype.Controller;
 import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.*;
@@ -20,7 +21,9 @@ public class LoginController {
     @PostMapping(value = "/user/login")
     public String login(@RequestParam("userName") String userName, @RequestParam("passWord") String passWord,
                         Map<String,Object> map, HttpSession session){
-        if (!StringUtils.isEmpty(userName) && "123456".equals(passWord)){
+        if (!"管理员".equals(userName)){
+            throw new UserNotExistException();
+        }else if ("123456".equals(passWord)){
             //登录成功,为了防止表单重复提交,我们使用重定向的方式
             session.setAttribute("loginUser",userName);
             return "redirect:/main.html";

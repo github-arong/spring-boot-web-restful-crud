@@ -4,6 +4,7 @@ import com.moti.dao.DepartmentDao;
 import com.moti.dao.EmployeeDao;
 import com.moti.entities.Department;
 import com.moti.entities.Employee;
+import com.moti.exception.UserNotExistException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -19,6 +20,11 @@ public class EmployeeController {
     EmployeeDao dao;
     @Autowired
     DepartmentDao departmentDao;
+
+    @RequestMapping("/hello")
+    public void hello(){
+        throw new UserNotExistException();
+    }
 
     /**
      * 跳转到添加员工页面
