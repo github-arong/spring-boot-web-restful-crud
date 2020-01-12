@@ -36,10 +36,10 @@ public class MvcConfig extends WebMvcConfigurerAdapter {
      * SpringBoot已经做好了对静态资源的映射
      * @param registry
      */
-//    @Override
-//    public void addInterceptors(InterceptorRegistry registry) {
-//        registry.addInterceptor(new LoginHandlerInterceptor()).addPathPatterns("/**").excludePathPatterns("/","/index.html","/user/login");
-//    }
+    @Override
+    public void addInterceptors(InterceptorRegistry registry) {
+        registry.addInterceptor(new LoginHandlerInterceptor()).addPathPatterns("/**").excludePathPatterns("/","/index.html","/user/login");
+    }
 
     /**
      * 将自己的国际化解析器组件添加到容器
